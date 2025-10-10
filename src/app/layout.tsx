@@ -7,6 +7,7 @@ import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import CustomCursor from "@/components/custom-cursor"
 import "./globals.css"
+import { Providers } from "./providers"
 
 export const metadata: Metadata = {
   title: "Danidu Pramuditha - Associate Software Engineer",
@@ -22,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <ThemeProvider>
+        <Providers>
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
           <CustomCursor />
-        </ThemeProvider>
-        <Analytics />
+          <Analytics />
+        </Providers>
       </body>
     </html>
   )
