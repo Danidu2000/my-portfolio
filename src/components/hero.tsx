@@ -15,11 +15,17 @@ export default function Hero({ magnetic = false }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [currentText, setCurrentText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
+  const [mounted, setMounted] = useState(false)
   const { theme } = useTheme()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const heroRef = useRef<HTMLElement>(null)
 
   const fullText = "Associate Software Engineer"
+
+  // Handle client-side mounting
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Typing animation effect
   useEffect(() => {
@@ -105,8 +111,8 @@ export default function Hero({ magnetic = false }: HeroProps) {
             className="object-cover"
             priority
           />
-          {/* Theme-aware overlay */}
-          <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-black/70' : 'bg-white/80'}`}></div>
+          {/* Theme-aware overlay - only render after mounting */}
+          <div className={`absolute inset-0 ${mounted ? (theme === 'dark' ? 'bg-black/70' : 'bg-white/80') : 'bg-black/70'}`}></div>
         </div>
 
         {/* CSS-based Lens Flare Effect */}
