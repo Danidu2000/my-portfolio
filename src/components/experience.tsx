@@ -27,7 +27,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" ref={sectionRef} className="py-20 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section id="experience" ref={sectionRef} className="py-12 sm:py-16 lg:py-32 bg-muted/30 relative overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -83,7 +83,7 @@ export default function Experience() {
           >
             {/* Animated Title with Shine Effect */}
             <motion.h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-16 text-balance text-center"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 lg:mb-16 text-balance text-center"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -100,30 +100,30 @@ export default function Experience() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <div className="relative p-8 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] animate-float-card">
+              <div className="relative p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] animate-float-card">
                 {/* Gradient Background Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                {/* Corner Accents */}
-                <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-primary rounded-tl-lg opacity-60"></div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-primary rounded-tr-lg opacity-60"></div>
-                <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-primary rounded-bl-lg opacity-60"></div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-primary rounded-br-lg opacity-60"></div>
+                {/* Corner Accents - Responsive */}
+                <div className="absolute -top-1 -left-1 sm:-top-2 sm:-left-2 w-6 h-6 sm:w-8 sm:h-8 border-l-2 border-t-2 border-primary rounded-tl-lg opacity-60"></div>
+                <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 border-r-2 border-t-2 border-primary rounded-tr-lg opacity-60"></div>
+                <div className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-6 h-6 sm:w-8 sm:h-8 border-l-2 border-b-2 border-primary rounded-bl-lg opacity-60"></div>
+                <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 border-r-2 border-b-2 border-primary rounded-br-lg opacity-60"></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Header Section */}
-                  <div className="flex items-start gap-6 mb-6">
+                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
                     <motion.div
-                      className="p-4 bg-primary/10 rounded-xl animate-float-icon group-hover:bg-primary/20 transition-colors duration-300"
+                      className="p-3 sm:p-4 bg-primary/10 rounded-lg sm:rounded-xl animate-float-icon group-hover:bg-primary/20 transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <Briefcase className="h-8 w-8 text-primary" />
+                      <Briefcase className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                     </motion.div>
 
-                    <div className="flex-1">
+                    <div className="flex-1 w-full">
                       <motion.h3
-                        className="text-2xl sm:text-3xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300"
+                        className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isVisible ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.6, duration: 0.6 }}
@@ -132,7 +132,7 @@ export default function Experience() {
                       </motion.h3>
 
                       <motion.p
-                        className="text-lg text-muted-foreground mb-3 font-medium"
+                        className="text-base sm:text-lg text-muted-foreground mb-2 sm:mb-3 font-medium"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isVisible ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.7, duration: 0.6 }}
@@ -141,12 +141,12 @@ export default function Experience() {
                       </motion.p>
 
                       <motion.div
-                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                        className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isVisible ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.8, duration: 0.6 }}
                       >
-                        <Calendar className="h-4 w-4" />
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                         <span>January 2025 - Present</span>
                       </motion.div>
                     </div>
@@ -158,7 +158,7 @@ export default function Experience() {
                     animate={isVisible ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.9, duration: 0.6 }}
                   >
-                    <ul className="space-y-4 text-muted-foreground">
+                    <ul className="space-y-3 sm:space-y-4 text-muted-foreground">
                       {[
                         "Responsible for developing and implementing software applications",
                         "Contributed to multiple client-facing web projects as part of a collaborative development team",
@@ -168,13 +168,13 @@ export default function Experience() {
                       ].map((item, index) => (
                         <motion.li
                           key={index}
-                          className="flex items-start gap-3"
+                          className="flex items-start gap-2 sm:gap-3"
                           initial={{ opacity: 0, x: -20 }}
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 1.0 + index * 0.1, duration: 0.5 }}
                         >
-                          <span className="text-primary mt-1.5 text-lg">•</span>
-                          <span className="leading-relaxed">{item}</span>
+                          <span className="text-primary mt-1 sm:mt-1.5 text-base sm:text-lg">•</span>
+                          <span className="leading-relaxed text-sm sm:text-base">{item}</span>
                         </motion.li>
                       ))}
                     </ul>

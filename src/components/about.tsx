@@ -64,7 +64,7 @@ export default function About() {
     <motion.section 
       id="about" 
       ref={sectionRef} 
-      className="relative py-20 lg:py-32 overflow-hidden bg-background/95 backdrop-blur-lg border-t border-border/50 shadow-2xl min-h-screen"
+      className="relative py-20 lg:py-32 overflow-hidden bg-black/40 backdrop-blur-lg border-t border-border/50 shadow-2xl min-h-screen"
       style={{ 
         y,
         borderTopLeftRadius: borderRadius,
