@@ -188,22 +188,56 @@ export default function Hero({ magnetic = false }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
               >
-                <motion.a
-                  href="#contact"
-                  data-magnetic
-                  className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get In Touch
-                </motion.a>
-                <motion.a
-                  href="#projects"
-                  data-magnetic
-                  className="inline-flex items-center justify-center px-8 py-3 border border-border rounded-lg font-medium hover:bg-muted transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Projects
-                </motion.a>
+                <motion.div className="relative group">
+                  <div className="relative overflow-hidden rounded-xl bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]">
+                    {/* Gradient Background Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Corner Accents */}
+                    <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-primary rounded-tl-lg opacity-60"></div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-primary rounded-tr-lg opacity-60"></div>
+                    <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-primary rounded-bl-lg opacity-60"></div>
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-primary rounded-br-lg opacity-60"></div>
+                    
+                    <motion.a
+                      href="#contact"
+                      data-magnetic
+                      className="relative z-10 inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Get In Touch
+                    </motion.a>
+                  </div>
+                </motion.div>
+
+                <motion.div className="relative group">
+                  <div className="relative overflow-hidden rounded-xl bg-background/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]">
+                    {/* Gradient Background Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Corner Accents */}
+                    <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-primary rounded-tl-lg opacity-60"></div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-primary rounded-tr-lg opacity-60"></div>
+                    <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-primary rounded-bl-lg opacity-60"></div>
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-primary rounded-br-lg opacity-60"></div>
+                    
+                    <motion.button
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = '/assets/Danidu Pramuditha CV.pdf';
+                        link.download = 'Danidu Pramuditha CV.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
+                      data-magnetic
+                      className="relative z-10 inline-flex items-center justify-center px-8 py-3 text-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:text-primary"
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Download CV
+                    </motion.button>
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
           </div>
