@@ -7,7 +7,6 @@ import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import CustomCursor from "@/components/custom-cursor"
 import "./globals.css"
-import { Providers } from "./providers"
 
 export const metadata: Metadata = {
   title: "Danidu Pramuditha - Associate Software Engineer",
