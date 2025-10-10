@@ -124,11 +124,10 @@ export default function Hero({ magnetic = false }: HeroProps) {
 
         {/* Hero Content - Fades out on scroll */}
         <motion.div 
-          className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16 sm:mt-20 md:mt-0"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-20 sm:mt-16 md:mt-0"
           style={{ 
             opacity: contentOpacity,
             y: contentY,
-            marginTop: '110px'
           }}
         >
           <div className="max-w-4xl mx-auto text-center">
@@ -310,7 +309,7 @@ export default function Hero({ magnetic = false }: HeroProps) {
 
         {/* Hero Content - Fades out on scroll */}
         <motion.div 
-          className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16 sm:mt-8 md:mt-0"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-20 sm:mt-12 md:mt-0"
           style={{ 
             opacity: contentOpacity,
             y: contentY
