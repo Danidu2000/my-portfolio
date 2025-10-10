@@ -322,7 +322,7 @@ export default function Hero({ magnetic = false }: HeroProps) {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               {/* CSS-based Floating Avatar */}
-              <div className="mb-8 flex justify-center">
+              <div className="mb-8 flex justify-center mt-20">
                 <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 animate-float-avatar">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full animate-pulse opacity-20"></div>
                   <Image
