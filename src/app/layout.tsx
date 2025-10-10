@@ -23,12 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Providers>
-          {children}
+        <ThemeProvider>
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
           <CustomCursor />
-          <Analytics />
-        </Providers>
+        </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
