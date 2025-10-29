@@ -22,9 +22,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className + " bg-[#0f172a]"}>
         <ThemeProvider>
-          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <Suspense fallback={
+            <div className="fixed inset-0 flex items-center justify-center bg-[#0f172a] z-[9999]">
+              <div className="flex flex-col items-center gap-4">
+                <div className="relative">
+                  <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin-gaming" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="block w-6 h-6 bg-blue-500 rounded-full animate-pulse-gaming"></span>
+                  </div>
+                </div>
+                <span className="text-blue-400 font-mono text-lg tracking-widest select-none">
+                  LOADING
+                </span>
+              </div>
+            </div>
+          }>
+            {children}
+          </Suspense>
           <CustomCursor />
         </ThemeProvider>
         <Analytics />
